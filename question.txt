@@ -1,0 +1,67 @@
+Create a git repository and clone it for the changes and publish the changes using git bash.
+Write a JavaScript program that takes an array of integers as input. Use arrow functions to perform the following tasks:
+Double the values of each element in the array.
+Filter the doubled values to include only the numbers greater than 20.
+Return the resulting filtered array as output.
+Write a JavaScript program to calculate the sum of all elements in an array using an arrow function.
+Write a program to filter even numbers from an array using an arrow function.
+Write an arrow function to check if a given string is a palindrome.
+Write a program to count the number of vowels in a string using an arrow function.
+Write a JavaScript program to implement
+Object Destructuring
+Array Destructuring
+Destructuring with renaming
+Destructuring with function
+Destructuring with Rest operator
+Create 2 JavaScript files. Import one file into another and access a function to say Hello to user.
+Write a JavaScript console program to find absolute value of a given number using async/await.
+Write a JavaScript console program to find sum of digits of a given number using async/await.
+Write NodeJS program to implement the following using fs module:
+1. Deleting file
+2. Creating and Deleting directory
+3. Deleting file within a directory
+4. Removing the file and then removing the directory
+5. creating a directory and writing the data to the file within the directory
+6. Create a server that listens to client requests using http module
+Write NodeJS program to implement os, and http module.
+Write a node js program to demonstrate events 
+Write a node js program to demonstrate read and write streams
+Write a node js program for reading and writing into file using pipes.
+Write a node js program for reading the file and sending the contents as response to the client request.
+Write a node js program to serve the html page to the client.
+Write a node js program to serve the json page to the client
+Demonstrate Basic routing in node
+Create Express server listening requests at port 3000. Add different end points to provide access to the resources.
+Create a REST API for employees data and add different end points on express server to   perform CRUD operations on the API. Test the end points using POSTMAN.
+Write an ejs program to display user information
+Write an ejs program to display contact information
+write a program to demonstrate function generators
+write a program to demonstrate function generators with multiple generators
+write a program to demonstrate symbols in java script
+write a program to demonstrate closures
+write a js program to implement prototypal inheritance
+Use fetch function to access remote data using the given API 
+jsonplaceholder.typicode/users
+Jsonplaceholder.typicode/todos
+Restcountries.com
+Use fetch function to read the weather data from api “openweathermap.org” and display the  details like min_temp,max_temp,avg_temp for a given city 
+Read the weather forecast details for a given city and display details like date and temp in a table
+Create college database, and products collection and insert the following data in MongoDB
+Find the products information whose price is greater than or equal to 200.
+Find the products information whose price is less than 200.
+Find the products information whose quantity is not equal to 300.
+Find the products information whose price is equal to 200 and quantity is equal to 60.
+Find the products information whose price is equal to 500 or quantity is equal to 60.
+Find the products information whose price is not equal to 400 or quantity is not equal to 40.
+Find the products information whose price is either 200 or 400.
+Find the products information whose price is neither 100 nor 500.
+Update the price of laptop to 700.
+Find the name, and price of the products whose _id is 5.
+Sort the products collection based on the ascending order of name.
+Sort the products collection based on the descending order of price and limit the result to 2 documents.
+Retrieve the name, and price of the product with the lowest price
+Retrieve the third lowest-priced product, displaying only its name and price
+Delete the product whose _id is 7.
+Write an express application connecting mongodb and perform CRUD operations
+Create a real time database using firebase and perform CRUD operations
+create a firestore database in firebase and perform CRUD operations
