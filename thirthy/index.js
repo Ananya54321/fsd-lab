@@ -26,6 +26,7 @@ app.post("/", async (req, res) => {
     pressure,
     humidity,
   };
+  // res.send(details);
   res.render("result.ejs", { details });
 });
 
