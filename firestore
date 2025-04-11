@@ -1,0 +1,50 @@
+import { initializeApp } from 'firebase/app';
+import { getFirestore, collection, getDocs, addDoc,updateDoc,deleteDoc,doc } from 'firebase/firestore/lite';
+
+// Follow this pattern to import other Firebase services
+// import { } from 'firebase/<service>';
+
+// TODO: Replace the following with your app's Firebase project configuration
+
+
+const firebaseConfig = {
+  apiKey: "AIzaSyAkZ73E7PA7JOU60xW7VSU2KklHEr1Hoa8",
+  authDomain: "fsd-internal.firebaseapp.com",
+  projectId: "fsd-internal",
+  storageBucket: "fsd-internal.firebasestorage.app",
+  messagingSenderId: "93426760790",
+  appId: "1:93426760790:web:6d2487312477aadd76cff7",
+  measurementId: "G-8FN50T3YYD"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+async function fetchData() {
+  const users = await getDocs(collection(db, "user"));
+  users.forEach((user) => {
+    console.log(user.id, " => ", user.data());
+  });
+}
+await fetchData()
+
+async function addData(){
+  const user={name:"dumbo",age:"19"};
+  await addDoc(collection(db,"user"),user);
+  console.log("User added successfully")
+}
+//await addData()
+
+async function deleteData(){
+  const user=doc(db,"user","sn8GrcQKr6SnvLSZjnrq");
+  await deleteDoc(user);
+  console.log("User deleted successfully",user.id);
+}
+await deleteData()
+
+async function updateData(){
+  const user=doc(db,"user","2JcVtEx6dO7b8KfkjHLL");
+  await updateDoc(user,{age:"16"});
+  console.log("User updated successfully",user.id);
+}
+await updateData()
