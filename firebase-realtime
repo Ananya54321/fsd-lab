@@ -1,0 +1,72 @@
+import { initializeApp } from 'firebase/app';
+import { update,get,remove } from 'firebase/database';
+import { getDatabase, ref, set, push } from 'firebase/database';
+
+// Follow this pattern to import other Firebase services
+// import { } from 'firebase/<service>';
+
+// TODO: Replace the following with your app's Firebase project configuration
+
+
+const firebaseConfig = {
+  apiKey: "AIzaSyAkZ73E7PA7JOU60xW7VSU2KklHEr1Hoa8",
+  authDomain: "fsd-internal.firebaseapp.com",
+  projectId: "fsd-internal",
+  storageBucket: "fsd-internal.firebasestorage.app",
+  messagingSenderId: "93426760790",
+  appId: "1:93426760790:web:6d2487312477aadd76cff7",
+  measurementId: "G-8FN50T3YYD"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getDatabase(app);
+
+
+// async function createUser(userData) {
+//     const usersRef = ref(db, 'users');
+//     const newUserRef = push(usersRef);
+//     await set(newUserRef, userData);
+//     console.log("User created with ID:", newUserRef.key);
+//   }
+//  const userData={name:"ananya",age:19};
+// await createUser(userData);  
+
+
+
+async function readUsers() {
+  const usersRef = ref(db, 'users');      // Points to 'users' in the DB
+  const snapshot = await get(usersRef);   // Get the data once
+
+  if (!snapshot.exists()) {
+    console.log("No data found");
+    return [];
+  }
+
+  const data = snapshot.val();            // Get actual data
+  const users = [];
+
+  for (let id in data) {
+    users.push({ id, ...data[id] });      // Convert to array with IDs
+  }
+
+  console.log(users);
+  console.log("Users fetched successfully");
+  return users;
+}
+
+ const res=await readUsers();
+    console.log(res);
+
+// async function updateUser(userId, newdata) {
+//     const usersRef = ref(db,`users/${userId}`); // Reference to the specific user
+//     await update(usersRef,newdata);
+//     console.log("User updated successfully",userId);
+// }
+// await updateUser("-ONQMGuqBB39RiiTDXWL", { age: 20 }); // Update user with ID "userId" to age 20
+
+async function deleteUser(userId){
+    const userRef=ref(db,`users/${userId}`); // Reference to the specific user
+    await remove(userRef);
+    console.log("User deleted successfully",userId);
+}
+await deleteUser("-ONQMGuqBB39RiiTDXWL");
