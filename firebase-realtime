@@ -9,7 +9,7 @@ import { getDatabase, ref, set, push } from 'firebase/database';
 
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAkZ73E7PA7JOU60xW7VSU2KklHEr1Hoa8",
+  apiKey: "",
   authDomain: "fsd-internal.firebaseapp.com",
   projectId: "fsd-internal",
   storageBucket: "fsd-internal.firebasestorage.app",
